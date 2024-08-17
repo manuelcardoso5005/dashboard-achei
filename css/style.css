@@ -1,0 +1,526 @@
+/* Importando a fonte */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Variáveis de Cores */
+:root {
+  --bg: #ebf3f2;
+  --bg-2: #fff;
+  --title-color: #10103e;
+  --text-color: #696969;
+  --red: #dc2342;
+  --btn-color: #007bff;
+  --border-color:rgba(0, 0, 0, .1);
+  --hover-btn: rgb(16, 107, 204);
+}
+
+.dark-mode {
+  --bg: #181818;
+  --bg-2: #282828;
+  --title-color: #ffffff;
+  --text-color: #cccccc;
+  --red: #ff4757;
+  --btn-color: #74a6d8;
+  --border-color:rgba(0, 0, 0, 0.534);
+  --hover-btn: rgb(65, 111, 156);
+}
+
+/* Reset de Estilos */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+/* Estilo Global do Corpo */
+body {
+  font-size: 16px;
+  font-weight: 400;
+  background-color: var(--bg);
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Estilo para o Header */
+header {
+    position: fixed;
+    width: 100%;
+    background-color: var(--bg-2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 11;
+  }
+
+/* Header do Dashboard */
+#dash-header {
+    padding: 0em 2em;
+  }
+
+  
+/* Area do Logotipo */
+.logo-area {
+    border-right: 1px solid rgba(0, 0, 0, .1);
+    width: 200px;
+    height: 80px;
+    margin-right: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logotipo {
+    height: 40px;
+    width: 40px;
+}
+    
+/* Estilo do Container do Switch de Modo */
+#switch-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+/* Estilo do Ícone do Switch */
+#switch-container i {
+    cursor: pointer;
+}
+  
+  /* Estilo do Botão de Switch */
+ .switch-btn {
+    margin: 0 .5em;
+    height: auto;
+    width: 40px;
+    padding: 2px;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  
+/* Estilo do Botão de Switch no Modo Claro */
+#switch-container.light .switch-btn {
+    background-color: #007bff;
+    display: flex;
+    justify-content: flex-start;
+}
+  
+/* Estilo do Botão de Switch no Modo Escuro */
+#switch-container.dark .switch-btn {
+    background-color: #696969;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+/* Estilo do Texto no Modo Escuro */
+#switch-container.dark .btn-light {
+    color: #fff;
+    opacity: .5;
+}
+  
+#switch-container.dark .btn-dark {
+    color: #fff;
+}
+  
+/* Estilo do Ícone no Modo Claro */
+#switch-container.light .bi-brightness-high-fill {
+    color: #007bff;
+}
+  
+/* Estilo do Interior do Botão de Switch */
+.switch-btn .switch-inside {
+    background-color: #fff;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+}
+  
+/* Lado esquerdo do Header */
+.left-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Area do Botao Menu */
+.btn-menu {
+    width: 50px;
+    height: 50px;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-right: .3em;
+    font-weight: 700;
+    transition: all .3s ease;
+    background-color: transparent;
+}
+
+.btn-menu .bars {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-menu .bar {
+    width: 25px;
+    height: 4px;
+    background-color: var(--text-color);
+    position: absolute;
+    transition: all .3s ease;
+    border-radius: 10px;
+}
+
+.btn-menu:hover .bar {
+    background-color: var(--title-color);
+}
+
+/* Estilo para Menu o fechado */
+.btn-menu.close .bar-1 {
+    top:14px;
+}
+
+.btn-menu.close .bar-3 {
+    bottom:14px;
+}
+
+/* Estilo para o Menu aberto */
+.btn-menu.open .bar-1 {
+    rotate: -45deg;
+    top:19px;
+    left: 10px;
+    width: 14px;
+}
+
+.btn-menu.open .bar-3 {
+    rotate: 45deg;
+    bottom: 19px;
+    left: 10px;
+    width: 14px;
+}
+
+/* Area de pesquisa */
+.search-area {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    transition: all 1s ease;
+}
+
+.search-area input {
+    width: 0%;
+    transition: all 1s ease;
+}
+
+.search-area i {
+    color: var(--text-color);
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.search-area i:hover {
+    color: var(--title-color);
+}
+
+.search-area.open {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.search-area.open input {
+    font-size: 1em;
+    padding: .6em 1em;
+    width: 100%;
+}
+
+.search-area.open i {
+    color: var(--bg);
+    background-color: var(--btn-color);
+    padding: .4em .5em;
+}
+
+.search-area.open i:hover {
+    background-color: var(--hover-btn);
+}
+
+/* Grupos Top */
+.icon-header {
+    font-size: 2em;
+    color: var(--text-color);
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.icon-header:hover {
+    color: var(--title-color);
+}
+
+.top-group  {
+    position: relative;
+    margin-left: 1.8em;
+}
+
+.top-group button {
+    background-color: transparent;
+}
+
+.number-of-header {
+    font-weight: 700;
+    background-color: red;
+    color: #fff;
+    font-size: .5em;
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+/* Area do Usuario Header */
+.header-user-area {
+    margin-left: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.btn-user-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    cursor: pointer;
+}
+
+.header-user-area .header-user-image-content {
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all .7s ease;
+    border: 2px solid var(--text-color);
+    margin-right: 1em;
+}
+
+.header-user-area .header-user-image-content:hover img {
+    scale: 1.09;
+}
+
+.header-user-area .header-user-image-content img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    transition: all .7s ease;
+}
+
+.header-user-name {
+    font-size: .9em;
+    font-weight: 700;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.header-user-name:hover {
+    color: var(--title-color);
+}
+
+.bi-chevron-down-header {
+    font-size: .7em;
+    margin-left: .5em;
+}
+
+.set {
+    width: 30px;
+    height: 30px;
+    background-color: var(--bg-2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    z-index: 12;
+    top:60px;
+    right: 50px;
+    rotate: 45deg;
+    display: none;
+}
+
+.header-user-area.close .header-user-info {
+    height: 0;
+}
+
+.header-user-info {
+    background-color: var(--bg-2);
+    position: absolute;
+    top:67px;
+    right: 0;
+    z-index: 13;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: all 1s ease;
+}
+
+.header-user-info .top-infor {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    padding: 1.5em;
+    border-bottom: 1px solid var(--border-color);
+    transition: all .3s ease;
+}
+
+.header-user-info .top-infor:hover {
+    background-color: var(--btn-color);
+}
+
+.header-user-info .top-infor:hover .header-info-email {
+    color: var(--title-color);
+}
+
+.top-infor figure {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-right: 1em;
+}
+
+.top-infor figure img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.top-infor .header-info-name {
+    font-size: .9em;
+    color: var(--title-color);
+    font-weight: 600;
+}
+
+.top-infor .header-info-email {
+    font-size: .8em;
+    color: var(--text-color);
+    margin-top: .4em;
+    transition: all .3s ease;
+}
+
+.profile-options li {
+    position: relative;
+    height: 45px;
+}
+
+.profile-options li a {
+    padding-top: .8em;
+    padding-left: 1.5em;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2em;
+    transition: all .3s ease;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.profile-options li a:hover {
+    background-color: var(--btn-color);
+    color: var(--title-color);
+}
+
+.profile-options li a i {
+    margin-right: .8em;
+}
+
+#header-logout {
+    cursor: pointer;
+    border-top: 1px solid var(--border-color);
+}
+    
+/* LAdo direito header */
+
+.right-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+  /* ocultar box */
+  .hideBox {
+    z-index: -10;
+    opacity: 0;
+    scale: 0;
+    pointer-events: none;
+}
+
+/* Menu Lateral */
+.side-menu-content {
+    position: fixed;
+    width: 232px;
+/*     width: 90px; */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--bg-2);
+    padding-top: 80px;
+    padding-left: 2.2em;
+}
+
+.side-bar {
+    padding-top: 1em;
+}
+
+.side-bar li {
+/*    background-color: #cfcccc; */
+   padding: .7em 0;
+}
+
+.side-bar li a {
+    font-size: 1.1em;
+    color: var(--text-color);
+    transition: all .3s ease;
+    font-weight: 600;
+}
+
+.side-bar li a.active {
+    color: var(--btn-color);
+}
+
+.side-bar li a:hover {
+    color: var(--btn-color);
+}
+
+.side-bar li a i {
+    margin-right: .5em;
+}
+
+  /* Estilos para Dispositivos Móveis (max-width: 600px) */
+@media (max-width: 600px) {
+
+}
+/* Estilos para Telas Médias e Grandes (min-width: 601px) */
+  @media (min-width: 601px) {
+
+}

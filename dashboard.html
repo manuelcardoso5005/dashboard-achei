@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script defer type="module" src="js/script.js"></script>
+    <script defer type="module" src="js/darkMode.js"></script>
+    <script defer type="module" src="js/btnMenu.js"></script>
+    <script defer type="module" src="js/searchArea.js"></script>
+    <script defer type="module" src="js/menuUser.js"></script>
+</head>
+<body>
+    <header id="dash-header">
+        <div class="left-header">
+            <div class="logo-area">
+                <a href="#">
+                    <img src="img/logo.png" alt="" class="logotipo">
+                </a>
+            </div>
+            <button class="btn-menu close">
+                 <div class="bars">
+                    <div class="bar bar-1"></div>
+                    <div class="bar bar-2"></div>
+                    <div class="bar bar-3"></div>
+                 </div>
+            </button>
+            <form action="" class="search-area">
+                <input type="search" name="search" id="search" placeholder="Pesquise aqui...">
+                <i class="bi bi-search btn-search"></i>
+            </form>
+            
+        </div>
+        <div class="right-header">
+            <div id="switch-container" class="light">
+                <i class="bi bi-brightness-high-fill btn-light" title="Activar modo claro"></i>
+                <div class="switch-btn" class="light">
+                    <div class="switch-inside"></div>
+                </div>
+                <i class="bi bi-moon-stars-fill btn-dark" title="Activar modo escuro"></i>
+            </div>
+            <div id="msg-area" class="top-group">
+                <span class="number-of-header">9+</span>
+                <button class="btn-icon">
+                    <i class="bi bi-chat-dots-fill icon-header"></i>
+                </button>
+            </div>
+            <div class="notification-area top-group">
+                <span class="number-of-header">9+</span>
+                <button class="btn-icon">
+                    <i class="bi bi-bell-fill icon-header"></i>
+                </button>
+            </div>
+            <div class="header-user-area close">
+                <div class="btn-user-menu">
+                    <figure class="header-user-image-content">
+                        <img src="img/user.jpg" alt="" class="header-user-image">
+                    </figure>
+                    <p class="header-user-name">Ana da Silva<i class="bi bi-chevron-down bi-chevron-down-header"></i></p>
+                </div>
+                <div class="set"></div>
+                <div class="header-user-info">
+                    <div class="top-infor">
+                        <figure>
+                            <img src="img/user.jpg" alt="">
+                        </figure>
+                        <div class="header-personal-info">
+                            <p class="header-info-name">Ana da Silva</p>
+                            <p class="header-info-email">anadasilva@gmail.com</p>
+                        </div>
+                    </div>
+                    <ul class="profile-options">
+                        <li>
+                            <a href="#">
+                                <i class="bi bi-person-fill"></i>
+                                <span>Perfil</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="bi bi-gear-fill"></i>
+                                <span>Configurações</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="header-logout">
+                                <i class="bi bi-power"></i>
+                                <span>Sair</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="side-menu-content">
+        <ul class="side-bar">
+            <li class="">
+                <a href="" class="active">
+                    <i class="bi bi-columns-gap"></i>
+                    <span class="side-bar-text">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="bi bi-calculator-fill"></i>   
+                    <span class="side-bar-text">Auditoria</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="bi bi-mortarboard-fill"></i>
+                    <span class="side-bar-text">Turmas</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="bi bi-person-fill"></i>
+                    <span class="side-bar-text">Usuários</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="bi bi-clipboard-data-fill"></i>
+                    <span class="side-bar-text">Análises</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="bi bi-gear-fill"></i>
+                    <span class="side-bar-text">Configurações</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+</body>
+</html>
